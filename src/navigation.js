@@ -6,13 +6,23 @@ import PayScreen from './screens/PayScreen';
 import BeneficiaryScreen from './screens/BeneficiaryScreen';
 import HaveScreen from './screens/HaveScreen';
 import AuthScreen from './screens/AuthScreen';
+import HistoryScreen from './screens/HistoryScreen';
+import UpcomingScreen from './screens/UpcomingScreen';
+import MoreScreen from './screens/MoreScreen';
 
 const PayStack = createStackNavigator({
   PayMain: PayScreen,
 });
 
+const PayTopNavigator = createMaterialTopTabNavigator({
+  Payments: PayStack,
+  History: HistoryScreen,
+  Upcoming: UpcomingScreen
+})
+
 const TabNavigator = createBottomTabNavigator({
-  Pay: PayStack,
+  More: MoreScreen,
+  Pay: PayTopNavigator,
   Have: HaveScreen
 });
 
